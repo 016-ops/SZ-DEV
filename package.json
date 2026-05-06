@@ -1,4 +1,13 @@
 {
+  "name": "sz-planning-console",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "build": "node app/scripts/build-react.js",
+    "start": "npm run build && venv\\Scripts\\python.exe backend/server.py",
+    "start:python": "venv\\Scripts\\python.exe backend/server.py",
+    "check": "node --check app/scripts/build-react.js && node --check app/src/main.js"
+  },
   "dependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
