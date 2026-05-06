@@ -1,0 +1,52 @@
+{
+  "profile": {
+    "playerName": "本地操作者",
+    "currentLucky": 300,
+    "highestStage": 48,
+    "refreshTokens": 9,
+    "notes": "这里保存的是规划参数，不连接真实游戏。"
+  },
+  "targets": [
+    { "cardId": "ion_saber", "qualityId": "green", "targetCount": 6, "ownedCount": 6 },
+    { "cardId": "frozen_blade", "qualityId": "gold", "targetCount": 1, "ownedCount": 0 },
+    { "cardId": "fatal_crit", "qualityId": "purple", "targetCount": 2, "ownedCount": 0 }
+  ],
+  "workflow": {
+    "queue": ["stage_1", "stage_6"],
+    "loopMode": "alternate",
+    "currentScreen": "refresh",
+    "runState": "idle",
+    "completedRuns": 0,
+    "lastError": null
+  },
+  "statistics": {
+    "samples": [
+      {
+        "timestamp": "2026-05-06T10:30:00Z",
+        "lucky": 280,
+        "highestStage": 46,
+        "drops": [
+          { "cardId": "ion_saber", "qualityId": "green", "count": 1 },
+          { "cardId": "legend_refresh", "qualityId": "gold", "count": 1 }
+        ]
+      },
+      {
+        "timestamp": "2026-05-06T11:15:00Z",
+        "lucky": 300,
+        "highestStage": 48,
+        "drops": [
+          { "cardId": "frozen_blade", "qualityId": "gold", "count": 1 },
+          { "cardId": "evade_skill", "qualityId": "blue", "count": 1 }
+        ]
+      }
+    ]
+  },
+  "logs": [
+    {
+      "id": "seed-log-1",
+      "level": "info",
+      "timestamp": "2026-05-06T11:20:00Z",
+      "message": "安全模式已启用，所有流程均为本地模拟。"
+    }
+  ]
+}

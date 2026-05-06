@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>副本规划控制台</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Local Planning Console</p>
+          <h1>副本规划控制台</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="simulate-refresh-btn" class="ghost-button">模拟刷新</button>
+          <button id="simulate-run-btn" class="primary-button">模拟一轮流程</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel profile-panel">
+          <div class="panel-header">
+            <h2>规划参数</h2>
+            <span id="status-pill" class="status-pill">读取中</span>
+          </div>
+
+          <form id="profile-form" class="stack">
+            <label class="field">
+              <span>操作者名称</span>
+              <input id="playerName" name="playerName" type="text" />
+            </label>
+            <div class="grid two">
+              <label class="field">
+                <span>幸运值</span>
+                <input id="currentLucky" name="currentLucky" type="number" min="0" />
+              </label>
+              <label class="field">
+                <span>最高通关</span>
+                <input id="highestStage" name="highestStage" type="number" min="0" />
+              </label>
+            </div>
+            <label class="field">
+              <span>规划刷新券</span>
+              <input id="refreshTokens" name="refreshTokens" type="number" min="0" />
+            </label>
+            <label class="field">
+              <span>备注</span>
+              <textarea id="notes" name="notes" rows="4"></textarea>
+            </label>
+            <button type="submit" class="secondary-button">保存参数</button>
+          </form>
+
+          <div class="divider"></div>
+
+          <div class="stack">
+            <div class="panel-header">
+              <h2>流程配置</h2>
+            </div>
+            <div class="field">
+              <span>轮换模式</span>
+              <div id="loop-mode" class="segmented"></div>
+            </div>
+            <div class="field">
+              <span>关卡队列</span>
+              <div id="stage-queue" class="stage-list"></div>
+            </div>
+            <button id="save-workflow-btn" class="secondary-button">保存流程</button>
+          </div>
+        </section>
+
+        <section class="panel screens-panel">
+          <div class="panel-header">
+            <h2>截图流程</h2>
+            <span id="current-screen-label" class="mono"></span>
+          </div>
+          <div id="screen-grid" class="screen-grid"></div>
+        </section>
+
+        <section class="panel target-panel">
+          <div class="panel-header">
+            <h2>目标牌</h2>
+            <button id="add-target-btn" class="ghost-button compact">新增目标</button>
+          </div>
+          <div id="target-list" class="target-list"></div>
+          <button id="save-targets-btn" class="secondary-button">保存目标牌</button>
+
+          <div class="divider"></div>
+
+          <div class="panel-header">
+            <h2>最近模拟</h2>
+            <span id="remaining-refresh" class="mono"></span>
+          </div>
+          <div id="recent-draws" class="draw-grid empty-state">尚未模拟</div>
+        </section>
+      </main>
+
+      <section class="bottom-layout">
+        <section class="panel stats-panel">
+          <div class="panel-header">
+            <h2>掉落统计</h2>
+            <span class="muted">按本地样本汇总</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>牌</th>
+                  <th>品阶</th>
+                  <th>次数</th>
+                  <th>概率</th>
+                </tr>
+              </thead>
+              <tbody id="stats-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel logs-panel">
+          <div class="panel-header">
+            <h2>运行日志</h2>
+            <span class="muted">安全模式</span>
+          </div>
+          <div id="log-list" class="log-list"></div>
+        </section>
+      </section>
+    </div>
+
+    <template id="target-row-template">
+      <div class="target-row">
+        <div class="grid two">
+          <label class="field">
+            <span>牌名</span>
+            <select data-field="cardId"></select>
+          </label>
+          <label class="field">
+            <span>品阶</span>
+            <select data-field="qualityId"></select>
+          </label>
+        </div>
+        <div class="grid two">
+          <label class="field">
+            <span>目标数量</span>
+            <input data-field="targetCount" type="number" min="1" />
+          </label>
+          <label class="field">
+            <span>已拥有</span>
+            <input data-field="ownedCount" type="number" min="0" />
+          </label>
+        </div>
+        <div class="row-actions">
+          <span data-progress class="progress-text"></span>
+          <button type="button" data-remove class="ghost-button compact danger">删除</button>
+        </div>
+      </div>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

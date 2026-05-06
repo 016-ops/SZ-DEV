@@ -1,0 +1,71 @@
+{
+  "qualities": [
+    { "id": "green", "label": "绿", "color": "#32d583", "weight": 0.4 },
+    { "id": "blue", "label": "蓝", "color": "#60a5fa", "weight": 0.28 },
+    { "id": "purple", "label": "紫", "color": "#a78bfa", "weight": 0.18 },
+    { "id": "gold", "label": "金", "color": "#fbbf24", "weight": 0.1 },
+    { "id": "red", "label": "红", "color": "#ef4444", "weight": 0.04 }
+  ],
+  "cards": [
+    { "id": "berserker", "name": "狂战神", "type": "战术", "tags": ["暴击", "攻速"] },
+    { "id": "fatal_crit", "name": "致命暴击", "type": "战术", "tags": ["暴击", "核心"] },
+    { "id": "savage_strike", "name": "残暴之击", "type": "战术", "tags": ["暴击", "武装"] },
+    { "id": "meteor", "name": "星陨", "type": "战术", "tags": ["暴击", "远程"] },
+    { "id": "rapid_fire_heart", "name": "连射之心", "type": "战术", "tags": ["攻速", "武装"] },
+    { "id": "crimson_crit", "name": "猩红暴击", "type": "战术", "tags": ["暴击"] },
+    { "id": "slaughter_strike", "name": "杀戮之击", "type": "战术", "tags": ["暴击", "血量"] },
+    { "id": "blood_rage", "name": "血怒狂击", "type": "战术", "tags": ["暴击", "唯一"] },
+    { "id": "speed_burst", "name": "速度爆发", "type": "战术", "tags": ["移动", "攻速"] },
+    { "id": "immortal_body", "name": "不朽神躯", "type": "战术", "tags": ["生存", "武装"] },
+    { "id": "fervor", "name": "狂热", "type": "战术", "tags": ["武装"] },
+    { "id": "life_force", "name": "生命之力", "type": "战术", "tags": ["生命"] },
+    { "id": "eternal_pool", "name": "永恒血池", "type": "战术", "tags": ["生命", "核心"] },
+    { "id": "divine_dash", "name": "神行冲击", "type": "战术", "tags": ["移动"] },
+    { "id": "swift_tide", "name": "迅捷狂涛", "type": "战术", "tags": ["攻速", "武装"] },
+    { "id": "iron_wall", "name": "铜墙铁骨", "type": "战术", "tags": ["减伤", "生存"] },
+    { "id": "steady_war", "name": "不动战神", "type": "战术", "tags": ["站桩"] },
+    { "id": "nuclear_qte", "name": "高能核武", "type": "战术", "tags": ["技能", "QTE"] },
+    { "id": "evade_skill", "name": "闪避技巧", "type": "战术", "tags": ["闪避"] },
+    { "id": "statue_power", "name": "雕像之力", "type": "战术", "tags": ["增益"] },
+    { "id": "legend_refresh", "name": "传奇刷新", "type": "刷新", "tags": ["刷新"] },
+    { "id": "epic_refresh", "name": "史诗刷新", "type": "刷新", "tags": ["刷新"] },
+    { "id": "advanced_refresh", "name": "高级刷新", "type": "刷新", "tags": ["刷新"] },
+    { "id": "ion_saber", "name": "离子光剑", "type": "武装", "tags": ["武装"] },
+    { "id": "origin_disc", "name": "始源之盘", "type": "武装", "tags": ["武装"] },
+    { "id": "wind_axe", "name": "疾风飞斧", "type": "武装", "tags": ["武装"] },
+    { "id": "frozen_blade", "name": "冰封之刃", "type": "武装", "tags": ["冰", "武装"] },
+    { "id": "star_fireball", "name": "星际火球", "type": "武装", "tags": ["火", "武装"] },
+    { "id": "fatal_blade", "name": "致命暴刃", "type": "武装", "tags": ["暴击", "武装"] }
+  ],
+  "stages": [
+    {
+      "id": "stage_1",
+      "label": "第1关",
+      "recommendedActions": [
+        { "kind": "keyHold", "key": "W", "minMs": 2200, "maxMs": 4200 },
+        { "kind": "keyTapChain", "keys": ["X", "R"] },
+        { "kind": "wait", "minMs": 14500, "maxMs": 16500 },
+        { "kind": "keyTapChain", "keys": ["Z", "C"] }
+      ]
+    },
+    {
+      "id": "stage_6",
+      "label": "第6关",
+      "recommendedActions": [
+        { "kind": "keyHold", "key": "D", "minMs": 400, "maxMs": 650 },
+        { "kind": "keyHold", "key": "W", "minMs": 1600, "maxMs": 2800 },
+        { "kind": "keyTapChain", "keys": ["X", "R"] },
+        { "kind": "wait", "minMs": 14500, "maxMs": 16500 },
+        { "kind": "keyTapChain", "keys": ["Z", "C"] }
+      ]
+    }
+  ],
+  "screens": [
+    { "id": "initial", "label": "初始画面", "file": "初始画面.png" },
+    { "id": "refresh", "label": "刷新画面", "file": "刷新画面.png" },
+    { "id": "boss_select", "label": "Boss选择画面", "file": "Boss选择画面.png" },
+    { "id": "prepare", "label": "开始游戏画面", "file": "开始游戏画面.png" },
+    { "id": "ingame", "label": "游戏内画面", "file": "游戏内画面.png" },
+    { "id": "result", "label": "结算画面", "file": "结算画面.png" }
+  ]
+}
